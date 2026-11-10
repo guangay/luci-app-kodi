@@ -32,4 +32,11 @@ define Package/luci-app-kodi/install
 	$(INSTALL_DATA) ./files/usr/share/rpcd/acl.d/luci-app-kodi.json $(1)/usr/share/rpcd/acl.d/
 endef
 
+define Build/Prepare
+	mkdir -p $(PKG_BUILD_DIR)
+endef
+
+define Build/Compile
+endef
+
 $(eval $(call BuildPackage,luci-app-kodi))
