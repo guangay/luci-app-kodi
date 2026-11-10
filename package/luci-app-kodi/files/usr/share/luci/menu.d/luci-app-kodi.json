@@ -1,18 +1,40 @@
 {
-	"admin/services/kodi": {
-		"title": "Kodi",
-		"order": 90,
-		"action": { "type": "firstchild" },
-		"depends": { "acl": [ "luci-app-kodi" ], "uci": { "kodi": true } }
+	"admin/kodi": {
+		"title": "Kodi 媒体中心",
+		"order": 27,
+		"action": {
+			"type": "firstchild"
+		},
+		"depends": {
+			"acl": [ "luci-app-kodi" ],
+			"fs": { "/usr/bin/kodi": "executable" }
+		}
 	},
-	"admin/services/kodi/status": {
+
+	"admin/kodi/status": {
 		"title": "状态与控制",
-		"order": 10,
-		"action": { "type": "view", "path": "kodi/status" }
+		"order": 1,
+		"action": {
+			"type": "view",
+			"path": "kodi/status"
+		}
 	},
-	"admin/services/kodi/web": {
+
+	"admin/kodi/web": {
 		"title": "Web 远程控制",
-		"order": 20,
-		"action": { "type": "view", "path": "kodi/web" }
+		"order": 2,
+		"action": {
+			"type": "view",
+			"path": "kodi/web"
+		}
+	},
+
+	"admin/kodi/guide": {
+		"title": "使用说明",
+		"order": 3,
+		"action": {
+			"type": "view",
+			"path": "kodi/guide"
+		}
 	}
 }

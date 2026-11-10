@@ -25,6 +25,7 @@ define Package/luci-app-kodi/install
 	$(INSTALL_DIR) $(1)/www/luci-static/resources/view/kodi
 	$(INSTALL_DATA) ./files/www/luci-static/resources/view/kodi/status.js $(1)/www/luci-static/resources/view/kodi/
 	$(INSTALL_DATA) ./files/www/luci-static/resources/view/kodi/web.js $(1)/www/luci-static/resources/view/kodi/
+	$(INSTALL_DATA) ./files/www/luci-static/resources/view/kodi/guide.js $(1)/www/luci-static/resources/view/kodi/
 	$(INSTALL_DIR) $(1)/usr/share/luci/menu.d
 	$(INSTALL_DATA) ./files/usr/share/luci/menu.d/luci-app-kodi.json $(1)/usr/share/luci/menu.d/
 	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d

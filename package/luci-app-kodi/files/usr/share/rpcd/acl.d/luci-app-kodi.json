@@ -1,7 +1,23 @@
 {
 	"luci-app-kodi": {
-		"description": "Grant access to Kodi service control",
-		"read": { "uci": [ "kodi" ], "ubus": [ "luci", "service" ] },
-		"write": { "uci": [ "kodi" ], "ubus": [ "luci" ] }
+		"description": "Grant access to Kodi service status and control",
+		"read": {
+		"ubus": {
+			"luci": [ "getInitList" ],
+			"service": [ "list" ]
+		},
+			"uci": [ "kodi" ],
+			"file": {
+				"/proc/mounts": [ "read" ],
+				"/etc/TZ": [ "read" ]
+			}
+		},
+		"write": {
+			"ubus": {
+				"luci": [ "setInitAction" ],
+				"uci": [ "set", "commit" ]
+			},
+			"uci": [ "kodi" ]
+		}
 	}
 }
