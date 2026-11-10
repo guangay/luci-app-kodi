@@ -1,0 +1,7 @@
+{
+	"luci-app-kodi": {
+		"description": "Grant access to Kodi service control",
+		"read": { "uci": [ "kodi" ], "ubus": [ "luci", "service" ] },
+		"write": { "uci": [ "kodi" ], "ubus": [ "luci" ] }
+	}
+}
